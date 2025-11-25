@@ -69,6 +69,10 @@ header nav a:hover, .btn:hover { color:#ffb199; } /* matches hero gradient coral
 @keyframes fadeIn{ to{opacity:1;} } 
 @keyframes fadeUp{ to{opacity:1; transform:translateY(0);} }
 
+#about p{
+   text-align: center;
+}
+
 /* ===========================
    Sections
 =========================== */

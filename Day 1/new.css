@@ -1,0 +1,223 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0b0c17;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px;
+    background: #0b0c17;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header .logo span {
+    color: #00ffe0;
+}
+
+header nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+header nav a.btn {
+    background: #00ffe0;
+    color: #0b0c17;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+.nav-links{
+    padding-right: 80px;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 50px 50px 50px;
+    position: relative;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-text .btn {
+    background: #00ffe0;
+    color: #0b0c17;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hero Animation */
+.hero-animation {
+    position: relative;
+}
+
+.chart-container {
+    width: 500px;
+    height: 200px;
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+}
+
+.line {
+    fill: none;
+    stroke: #00ffe0;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 3s ease forwards infinite alternate;
+}
+
+.dot {
+    fill: #00ffe0;
+    animation: bounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Floating Icons */
+.floating-icons span {
+    position: absolute;
+    font-size: 30px;
+    animation: float 6s linear infinite;
+}
+
+.floating-icons span:nth-child(1) { left: 20%; animation-delay: 0s; }
+.floating-icons span:nth-child(2) { left: 50%; animation-delay: 2s; }
+.floating-icons span:nth-child(3) { left: 80%; animation-delay: 4s; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    50% { transform: translateY(-60px) rotate(180deg); opacity: 1; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 0.8; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chart-container {
+        width: 100%;
+        height: 150px;
+    }
+}
+/* WHY US – Dark Neon Theme */
+.why-us {
+    padding: 100px 10%;
+    text-align: center;
+    background: #0b0c17; /* Same as site background */
+}
+
+.why-us h2 {
+    font-size: 2.6rem;
+    margin-bottom: 50px;
+    font-weight: 800;
+    color: #00ffe0; /* Neon accent */
+    text-shadow: 0 0 12px rgba(0, 255, 224, 0.6);
+    letter-spacing: 1px;
+}
+
+.why-cards {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Card Style */
+.why-cards .card {
+    background: #111322;
+    padding: 35px;
+    width: 290px;
+    border-radius: 18px;
+    border: 1px solid rgba(0,255,224,0.1);
+    box-shadow: 0 0 25px rgba(0,255,224,0.08);
+    transition: 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.why-cards .card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 40px rgba(0,255,224,0.25);
+    border-color: #00ffe0;
+}
+
+/* Glow Shine Overlay */
+.why-cards .card::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
+    background: radial-gradient(circle, rgba(0,255,224,0.15), transparent 60%);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.why-cards .card:hover::after {
+    opacity: 1;
+}
+
+/* Titles */
+.why-cards .card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #00ffe0;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0,255,224,0.4);
+}
+
+/* Text */
+.why-cards .card p {
+    color: #d7d7d7;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
